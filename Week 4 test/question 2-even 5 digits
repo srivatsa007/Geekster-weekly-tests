@@ -1,0 +1,61 @@
+iven an array nums of integers, return how many of them contain an even number of digits.
+
+Input Format
+
+First line of input contains integer N which reoresents size of array.
+
+second line of input contains N integer which represents elements of array.
+
+Constraints
+
+1 <= N <= 500
+
+1 <= nums[i] <= 10^5
+
+Output Format
+
+print the number of integers having even number of digits.
+
+Sample Input 0
+
+5
+12 345 2 6 7896
+Sample Output 0
+
+2
+
+**************************************************************************************************************************
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */Scanner scanner = new Scanner(System.in);
+        
+        // Read the size of the array
+        int n = scanner.nextInt();
+        
+        // Read the array elements
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = scanner.nextInt();
+        }
+        
+        // Call the method and print the result
+        int result = countEvenDigits(nums);
+        System.out.println(result);
+    }
+    
+    public static int countEvenDigits(int[] nums) {
+        int count = 0;
+        for (int num : nums) {
+            int digitCount = String.valueOf(num).length();
+            if (digitCount % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+    
+}
